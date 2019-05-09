@@ -45,7 +45,7 @@ function baseTest() {
 
         if (data) {
 
-            console.error('customEvent sent ok');
+            console.log('customEvent sent ok');
         }
     });
 
@@ -59,7 +59,7 @@ function baseTest() {
 
         if (data) {
 
-            console.error('customEvents sent ok');
+            console.log('customEvents sent ok');
         }
     });
 }
