@@ -16,18 +16,18 @@ function baseTest() {
     });
 
     client.on('connect', function() {
-		
-		console.log('base test connect');            
+        
+        console.log('base test connect');            
     });
 
     client.on('error', function(err) {
 
-		console.error('base test error: ', err);            
+        console.error('base test error: ', err);            
     });
 
     client.on('close', function() {
 
-		console.log('base test closed');            
+        console.log('base test closed');            
     });
 
     client.connect();
@@ -38,28 +38,28 @@ function baseTest() {
     // test customEvent
     client.customEvent("error", attrs, 5000, function(err, data){
 
-    	if (err) {
+        if (err) {
 
-    		console.error('customEvent sent err: ', err);
-    	}
+            console.error('customEvent sent err: ', err);
+        }
 
-    	if (data) {
+        if (data) {
 
-    		console.error('customEvent sent ok');
-    	}
+            console.error('customEvent sent ok');
+        }
     });
 
     // test customEvents
     client.customEvents(events, 5000, function(err, data){
 
-    	if (err) {
+        if (err) {
 
-    		console.error('customEvents sent err: ', err);
-    	}
+            console.error('customEvents sent err: ', err);
+        }
 
-    	if (data) {
+        if (data) {
 
-    		console.error('customEvents sent ok');
-    	}
+            console.error('customEvents sent ok');
+        }
     });
 }
