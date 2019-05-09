@@ -1,0 +1,15 @@
+{
+  "name": "rum-nodejs-sdk",
+  "version": "1.0.0",
+  "description": "Node.js SDK with RUM",
+  "main": "src/RUMClient.js",
+  "scripts": {
+    "test": "node test/test-rum.js"
+  },
+  "author": "Dixun",
+  "license": "MIT",
+  "dependencies": {
+    "int64-buffer": "^0.99.1007",
+    "msgpack-lite": "^0.1.26"
+  }
+}
