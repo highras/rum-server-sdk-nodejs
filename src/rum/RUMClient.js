@@ -56,7 +56,6 @@ class RUMClient {
         };
 
         this._mid_seq = 0;
-        this._salt_seq = 0;
         this._session = 0;
         this._rumId = null;
     }
@@ -64,7 +63,6 @@ class RUMClient {
     destroy() {
 
         this._mid_seq = 0;
-        this._salt_seq = 0;
         this._session = 0;
         this._rumId = null;
 
@@ -159,7 +157,7 @@ function buildSendData(events) {
         return null;
     }
 
-    let salt = genSalt.call(this);
+    let salt = genMid.call(this);
 
     let payload = {
         pid: this._pid,
@@ -218,16 +216,6 @@ function genMid() {
     } 
 
     return new Int64BE(Date.now().toString() + strFix);
-}
-
-function genSalt() {
-
-    if (++this._salt_seq >= 999) {
-
-        this._salt_seq = 0;
-    }
-
-    return new Int64BE(Date.now().toString() + this._salt_seq);
 }
 
 function genSign(salt) {
