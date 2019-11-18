@@ -2,6 +2,7 @@
 
 const RUMClient = require('../src/rum/RUMClient');
 
+RUMClient.RUMRegistration.register();
 baseTest.call(this);
 
 function baseTest() {
